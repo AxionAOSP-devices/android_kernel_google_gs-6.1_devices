@@ -16,6 +16,12 @@ load("//build/kernel/kleaf:workspace.bzl", "define_kleaf_workspace")
 
 define_kleaf_workspace()
 
+new_local_repository(
+    name = "axion_modules",
+    build_file = "//private/devices/google/common:axion_modules.BUILD.bazel",
+    path = "../../../device/axion/common/kernel/modules",
+)
+
 # Optional epilog for analysis testing.
 load("//build/kernel/kleaf:workspace_epilog.bzl", "define_kleaf_workspace_epilog")
 

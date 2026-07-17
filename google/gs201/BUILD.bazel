@@ -187,6 +187,7 @@ device_build(
     defconfig_fragments = ["gs201_defconfig"],
     ext_modules = [
         # keep sorted
+        "@axion_modules//:axion_modules",
         ":gs201_soc",
         "//private/google-modules/amplifiers/audiometrics",
         "//private/google-modules/aoc",

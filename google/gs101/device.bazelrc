@@ -3,6 +3,7 @@
 # Copyright (C) 2024 Google LLC
 
 build:gs101_base --//private/google-modules/soc/gs:gs_soc_module=//private/devices/google/gs101:gs101_soc
+build:gs101_base --//private/google-modules/gpu/common:pixel_gpu_module=//private/google-modules/gpu/borr_mali_kbase:mali_kbase
 
 build:gs101 --config=gs101_base
 build:gs101 --//private/devices/google/common:kernel=//private/devices/google/gs101:gs101/kernel
