@@ -192,6 +192,7 @@ device_build(
     defconfig_fragments = ["zuma_defconfig"],
     ext_modules = [
         # keep sorted
+        "@axion_modules//:axion_modules",
         ":zuma_soc",
         "//private/google-modules/amplifiers/audiometrics",
         "//private/google-modules/aoc",

@@ -1,0 +1,27 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2025-2026 AxionOS
+
+load("@//build/kernel/kleaf:kernel.bzl", "kernel_module")
+
+kernel_module(
+    name = "axion_modules",
+    srcs = glob([
+        "**/*.c",
+        "**/*.h",
+        "**/Kbuild",
+        "**/Makefile",
+        "axion_modules.mk",
+    ]) + [
+        "@//private/google-modules/gpu/common:headers",
+        "@//private/google-modules/soc/gs:gs_soc_headers",
+    ],
+    outs = [
+        "ax_dragonite/ax_dragonite.ko",
+    ],
+    deps = [
+        "@//private/google-modules/gpu/common:pixel_gpu_module",
+        "@//private/google-modules/soc/gs:gs_soc_module",
+    ],
+    kernel_build = "@//private/devices/google/common:kernel",
+    visibility = ["//visibility:public"],
+)

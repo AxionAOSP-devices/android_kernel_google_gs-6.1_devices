@@ -13,10 +13,13 @@ package(
     ],
 )
 
+exports_files(["axion_modules.BUILD.bazel"])
+
 label_flag(
     name = "kernel",
     build_setting_default = "//common:kernel_aarch64",
     visibility = [
+        "@axion_modules//:__pkg__",
         "//private/devices/google:__subpackages__",
         "//private/google-modules:__subpackages__",
     ],
