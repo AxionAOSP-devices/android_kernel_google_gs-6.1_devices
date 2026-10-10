@@ -12,14 +12,14 @@ kernel_module(
         "**/Makefile",
         "axion_modules.mk",
     ]) + [
-        "@//private/google-modules/gpu/common:headers",
         "@//private/google-modules/soc/gs:gs_soc_headers",
     ],
     outs = [
         "ax_dragonite/ax_dragonite.ko",
+        "bore_sched/bore_sched.ko",
+        "latency_sched/latency_sched.ko",
     ],
     deps = [
-        "@//private/google-modules/gpu/common:pixel_gpu_module",
         "@//private/google-modules/soc/gs:gs_soc_module",
     ],
     kernel_build = "@//private/devices/google/common:kernel",
